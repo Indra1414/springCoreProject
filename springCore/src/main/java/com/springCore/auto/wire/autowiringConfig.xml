@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!--This Is Our 1st Beans-->
+  <!-- This name (address) must be same as variable name declared in address class -->
+ <bean class="com.springCore.auto.wire.Address"  name="address1">     
+   <property name="street"    value="Buddhapark Road"/>   
+   <property name="city"   value="Kalyani"/>      
+  </bean>
+  
+   <bean class="com.springCore.auto.wire.Transport"  name="transportDetails" autowire="byName">     
+   <property name="transportDetails"    value="Krishnan Nagar Local Train Upto Kalyani Station From There 27 No Bus Upto Buddhapark"/>         
+  </bean>
+  
+   <bean class="com.springCore.auto.wire.Restaurant"  name="Restaurant" autowire="byType">     
+   <property name="restaurantName"    value="Dhakeswari Restaurant Kalyani"/>       
+  </bean>
+  
+  <!-- It will check in the Employee Class And Set The Values Through Constructor  -->
+  <bean class="com.springCore.auto.wire.Employee"  name="employee" autowire ="constructor">
+  <constructor-arg ref="transportDetails"></constructor-arg>
+ 	<constructor-arg ref="Restaurant" ></constructor-arg>
+ 	<constructor-arg ref="address1"></constructor-arg>	
+  </bean>
+ 
+ <!-- more bean definitions go here -->
+</beans>

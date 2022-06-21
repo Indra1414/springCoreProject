@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd
+ ">
+ 
+ <util:list list-class="java.util.LinkedList"   id="mySchoolFriend">
+ 	<value>Rupok</value>
+ 	<value>Sayan</value>
+ 	<value>Bittam</value>
+ 	<value>Gopal</value>
+ </util:list>
+ 
+ <util:list list-class="java.util.ArrayList"   id="myOfficecolegues">
+ 	<value>Manojeet</value>
+ 	<value>Kunal</value>
+ 	<value>Naren</value>
+ 	<value>Sourav</value>
+ </util:list>
+ 
+ 
+ <util:map map-class="java.util.HashMap"   id="colegueNameWithSalary">
+ 	<entry key="Manojeet" value="60000" />
+ 	<entry key="Kunal" value="70000" />
+ 	<entry key="Naren" value="80000" />
+ 	<entry key="Sourav" value="90000" />
+ </util:map>
+ 
+ <util:properties id="databaseConnection">
+ 	<prop key="username" >SYSTEM_INDRAJIT01</prop>
+ 	<prop key="password">Indrajit@#2313</prop>
+ 	<prop key="driver">com.oracle.jdbc.driver</prop>
+ 	<prop key="url">mysql:jdbc:localhost:1521/database</prop>
+ </util:properties>
+ 
+ <!--This Is Our 1st Beans-->
+ <bean class="com.springCore.standalons.collection.Person" name="person1">
+ <property name="friends">
+ 	<ref bean="mySchoolFriend"/>
+ 	</property>
+ 	 <property name="colegues">
+ 	<ref bean="myOfficecolegues"/>
+ </property>
+ 	 <property name="colegueNameWithSalary">
+ 	<ref bean="colegueNameWithSalary"/>
+ </property>
+  <property name="databaseConnection">
+ 	<ref bean="databaseConnection"/>
+ </property>
+ </bean>
+ 
+ 
+ 
+ <!-- more bean definitions go here -->
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!--This Is Our 1st Beans-->
+
+	<bean class="com.springCore.lifeCycle.Samossa" name="samossa" init-method="init" destroy-method="destroy">
+		<property name="price" value="10" />
+	</bean>
+	
+	<bean class="com.springCore.lifeCycle.Pepsi" name="pepsi1" >
+		<property name="price" value="10" />
+	</bean>  
+	
+	<bean class="com.springCore.lifeCycle.Chatni" name="chatni1" >
+		<property name="price" value="0" />
+	</bean>  
+	
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>	
+
+ <!-- more bean definitions go here -->
+</beans>

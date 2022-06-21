@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!--This Is Our 1st Beans-->
+ <bean name="emp1" class="com.springCore.collection.Employee">
+ 	<property name ="name"  value="Indrajit Samanta"/>
+ 		<property name ="phones">
+ 			<list>
+ 				<value>9748449134</value>
+ 				<value>8017019893</value>
+ 			</list>
+		</property>
+		
+	 <property name ="addresses">
+	     <set>
+	       <value>Kalyani</value>
+	       <value>Kolkata</value>
+	       <value>Kochi</value>
+	     </set>
+ 	 </property>
+ 	 
+ 	  <property name="courses">
+ 	    <map>
+ 	      <entry key="JAVA" value="30days"/>
+ 	      <entry key="Python" value="60days"/>
+ 	      <entry key="Data Structures" value="90days"/>
+ 	    </map> 
+ 	  </property>
+ 	  
+ 	   <property name="prop">
+ 	    <props>
+ 	 	   <prop key="name">Indrajit</prop>
+ 	   	   <prop key="facebookName">Indra Jit Sam </prop>
+ 	    </props> 
+ 	  </property> 
+ </bean>
+  <!-- more bean definitions go here -->
+</beans>

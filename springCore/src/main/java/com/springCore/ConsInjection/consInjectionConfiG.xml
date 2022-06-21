@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!--This Is Our 1st Beans-->
+ <bean class="com.springCore.ConsInjection.Certificate"  name="certificate1">
+  <constructor-arg value="Certified in "></constructor-arg>   
+ </bean>
+
+ <bean class="com.springCore.ConsInjection.Person"  name="person">
+ 	<constructor-arg value="Indrajit Samanta"></constructor-arg>
+ 	<constructor-arg value="160" type= "int"></constructor-arg>
+ 	<constructor-arg ref="certificate1"></constructor-arg>
+ 	<constructor-arg name="languages">
+ 		<list>
+ 			<value>Data Structures And Algorithms</value>
+ 			<value>JAVA and OOPS</value>
+ 			<value>C Programming</value>
+ 			<value>Automation Testing</value>
+ 		</list>
+ 	</constructor-arg>
+ </bean>
+
+ <bean class="com.springCore.ConsInjection.Addition"  name="addition">
+ 	<constructor-arg value="100" type="int"></constructor-arg>
+ 	<constructor-arg value="200" type="int"></constructor-arg>
+ </bean>  
+ 
+ <!-- more bean definitions go here -->
+</beans>
